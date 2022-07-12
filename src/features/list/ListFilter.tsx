@@ -3,7 +3,7 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import styles from './List.module.css';
 import { selectFilter } from './redux/listSelectors';
-import { setFilter } from './redux/reducers';
+import { setFilter } from './redux/actions';
 
 export function ListFilter() {
   const dispatch = useAppDispatch();

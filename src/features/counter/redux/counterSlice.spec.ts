@@ -1,4 +1,5 @@
-import counterReducer, { increment, decrement, incrementByAmount } from './reducers';
+import counterReducer from './reducers';
+import { increment, decrement, incrementByAmount } from './actions';
 import { CounterState } from '../types';
 
 describe('counter reducer', () => {

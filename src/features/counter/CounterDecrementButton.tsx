@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAppDispatch } from '../../app/hooks';
 import styles from './Counter.module.css';
-import { decrement } from './redux/reducers';
+import { decrement } from './redux/actions';
 
 export function CounterDecrementButton() {
   const dispatch = useAppDispatch();

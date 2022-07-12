@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, Draft, PayloadAction } from '@reduxjs/toolkit';
 import { ListState } from '../types';
 
 export const initialState: ListState = {
@@ -6,19 +6,18 @@ export const initialState: ListState = {
   filter: '',
 };
 
+const addListItem = (state: Draft<ListState>) => {
+  state.values.push({ value: `Hello #${state.values.length}` });
+};
+
+const setFilter = (state: Draft<ListState>, action: PayloadAction<string>) => {
+  state.filter = action.payload;
+};
+
 export const slice = createSlice({
   name: 'list',
   initialState,
-  reducers: {
-    addListItem: (state) => {
-      state.values.push({ value: `Hello #${state.values.length}` });
-    },
-    setFilter: (state, action: PayloadAction<string>) => {
-      state.filter = action.payload;
-    },
-  },
+  reducers: { addListItem, setFilter },
 });
-
-export const { addListItem, setFilter } = slice.actions;
 
 export default slice.reducer;
